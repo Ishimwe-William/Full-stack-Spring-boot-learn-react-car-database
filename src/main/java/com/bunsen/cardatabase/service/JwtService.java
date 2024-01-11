@@ -12,7 +12,7 @@ import java.util.Date;
 
 @Component
 public class JwtService {
-    static final long EXPIRATIONTIME = 60000;
+    static final long EXPIRATIONTIME = 86400000;
     // 1 day in ms. Should be shorter in production.
     static final String PREFIX = "Bearer";
 
