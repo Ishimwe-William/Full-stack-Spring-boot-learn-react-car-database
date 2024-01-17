@@ -7,10 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+//import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 
 import java.util.Arrays;
 
 @SpringBootApplication
+//@EnableMethodSecurity
 public class CardatabaseApplication implements CommandLineRunner {
     private final static Logger logger = LoggerFactory.getLogger(CardatabaseApplication.class);
     private final CarRepository repository;
@@ -57,5 +60,10 @@ public class CardatabaseApplication implements CommandLineRunner {
         // Username: admin, password: admin
         urepository.save(new AppUser("admin",
                 "$2a$10$8cjz47bjbR4Mn8GMg9IZx.vyjhLXR/SKKMSZ9.mP9vpMu0ssKi8GW", "ADMIN"));
+
+//        @PreAuthorize("hasRole('ADMIN')")
+//        public void deleteOwner(Car car) {
+//            // This method can be invoked by user with ADMIN role.
+//        }
     }
 }
